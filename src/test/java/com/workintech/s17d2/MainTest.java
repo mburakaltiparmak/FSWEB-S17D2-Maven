@@ -47,16 +47,16 @@ class MainTest {
         String expectedName = "John Doe";
         double expectedSalary = 1000.0;
         Experience expectedExperience = Experience.JUNIOR;
-        
+
         Developer developer = new Developer(expectedId, expectedName, expectedSalary, expectedExperience);
 
-        
+
         int actualId = developer.getId();
         String actualName = developer.getName();
         double actualSalary = developer.getSalary();
         Experience actualExperience = developer.getExperience();
 
-        
+
         assertEquals(expectedId, actualId, "The ID should match the expected value.");
         assertEquals(expectedName, actualName, "The name should match the expected value.");
         assertEquals(expectedSalary, actualSalary, "The salary should match the expected value.");
@@ -68,7 +68,7 @@ class MainTest {
     @Test
     @DisplayName("Test Experience Enum Values")
     void testEnumValuesExist() {
-        
+
         assertTrue(containsEnumValue("JUNIOR"), "JUNIOR should be a valid Experience enum value.");
         assertTrue(containsEnumValue("MID"), "MID should be a valid Experience enum value.");
         assertTrue(containsEnumValue("SENIOR"), "SENIOR should be a valid Experience enum value.");
@@ -108,9 +108,9 @@ class MainTest {
         assertTrue(seniorDeveloper instanceof Developer, "SeniorDeveloper should extend Developer.");
         assertEquals(Experience.SENIOR, seniorDeveloper.getExperience(), "Experience should be SENIOR.");
     }
-    
-    
-    
+
+
+
     /*-------------------DeveloperTaxTest-------------------*/
 
 
@@ -119,21 +119,21 @@ class MainTest {
     @Test
     @DisplayName("Test Get Simple Tax Rate")
     void testGetSimpleTaxRate() {
-        Double expectedSimpleTaxRate = 15d; 
+        Double expectedSimpleTaxRate = 15d;
         assertEquals(expectedSimpleTaxRate, developerTax.getSimpleTaxRate(), "The simple tax rate should be correct.");
     }
 
     @Test
     @DisplayName("Test Get Middle Tax Rate")
     void testGetMiddleTaxRate() {
-        Double expectedMiddleTaxRate = 25d; 
+        Double expectedMiddleTaxRate = 25d;
         assertEquals(expectedMiddleTaxRate, developerTax.getMiddleTaxRate(), "The middle tax rate should be correct.");
     }
 
     @Test
     @DisplayName("Test Get Upper Tax Rate")
     void testGetUpperTaxRate() {
-        Double expectedUpperTaxRate = 35d; 
+        Double expectedUpperTaxRate = 35d;
         assertEquals(expectedUpperTaxRate, developerTax.getUpperTaxRate(), "The upper tax rate should be correct.");
     }
 
